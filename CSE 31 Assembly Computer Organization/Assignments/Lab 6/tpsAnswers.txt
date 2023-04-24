@@ -1,0 +1,20 @@
+TPS Activity 1
+
+1)0x10010000
+2)Basic 1 on 1, source code has to be executed in many steps
+3) 32
+4) 8
+5) 4 bytes
+6) m:	.word 20
+7) 0x10010004
+8) str1: .asciiz "I love CSE31!"
+9) 0x10010008, 0x100100012, 0x100100016
+10) yes
+11) la, $a0 , str1
+12) la $t3, n 
+lw $t3, 0($t3)
+
+TPS Activity 2
+1)  MIPS doesn't work like that
+2) 
+

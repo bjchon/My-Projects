@@ -1,0 +1,18 @@
+TPS Activity 1
+
+1) Stack, heap, static
+2) a) 3
+b) 2
+c)global variabe storage
+d)stack
+
+TPS Activity 2
+3)) The addresses differ by 4. It points to itself.
+
+Individual Assignment 1
+1) a)To know how big the array is.
+b) no
+c) A new array is need because the the original array is needed to display.
+
+
+

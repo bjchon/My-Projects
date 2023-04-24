@@ -1,0 +1,12 @@
+Individual Assignment 1:
+1) 18
+2) ampersand & in front of input
+3) sum is equal to zero
+4) pass by pointer
+
+Individual Assignment 2:
+1) No, there's no space and a strange symbol at the end.
+2) It appended the second set of strings str2 of the 1st set.
+3) No, str1 and str2 only hold 10 characters
+
+

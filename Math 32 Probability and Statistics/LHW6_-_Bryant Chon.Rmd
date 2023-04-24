@@ -1,0 +1,267 @@
+---
+title: "MLE Computer Homework"
+author: "[Bryant Chon]"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    toc: true
+    theme: cerulean
+---
+
+```{r setup, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("tidyverse") #to load ggplot() and read_csv() functions
+data_obs <- rexp(1000, rate = 1/3.2)
+```
+
+# Instructions
+
+* fill in your full name in the `author` field above
+* `save as` this file as a separate *.rmd file, and replace "template" with your full name
+* read through the examples below
+* finish the exercises
+
+# Examples
+
+## Maximum Likelihood Estimate with the Poisson Distribution
+
+### Synthetic Data
+
+Source:  https://cmdlinetips.com/2019/03/introduction-to-maximum-likelihood-estimation-in-r/
+
+```{r}
+# generate data from Poisson distribution with the parameter lambda = 5
+N <- 100 #sample size
+data_pois <- rpois(n = N, lambda = 5)
+
+# convert to data frame
+df_Poisson <- data.frame(data_pois)
+
+# plot data
+df_Poisson %>% 
+  ggplot(aes(x=data_pois))+ 
+  geom_histogram(bins = N) +
+  labs(title = "Poisson Distribution",
+       subtitle = "lambda = 5", 
+       caption = "Math 32",
+       x = "data",
+       y = "count") +
+  theme_bw()
+```
+
+### Likelihood
+
+```{r}
+# likelihood of a single data point, guessing lambda = 1
+dpois(data_pois[1], lambda = 1)
+
+# likelihood of a single data point, over a sequence of guesses for lambda
+lambda_values <- seq(1, 20)
+likelihood <- dpois(data_pois[1], lambda = lambda_values)
+
+# arranged into a data frame
+lh_single <- data.frame(lambda_values = lambda_values, likelihood = likelihood )
+
+lh_single %>% 
+  ggplot(aes(x = lambda_values,y = likelihood))+
+  geom_point(size = 4, color = "blue")+
+  labs(title = "Likelihood of a single data point over multiple lambda values",
+       subtitle = "(we will look for a maximum)",
+       caption = "Math 32",
+       x = "lambda",
+       y = "likelihood") +
+  theme_bw() 
+```
+
+### Log-Likelihood
+
+```{r}
+# log-likelihood of a single data point, guessing lambda = 1
+dpois(data_pois[1], lambda = 1, log = TRUE)
+
+# log-likelihood of a single data point, over a sequence of guesses for lambda
+lambda_values <- seq(1, 20)
+log_likelihood <- dpois(data_pois[1], lambda = lambda_values, log = TRUE)
+
+# arranged into a data frame
+lh_single <- data.frame(lambda_values = lambda_values, log_likelihood = log_likelihood)
+
+lh_single %>% 
+  ggplot(aes(x = lambda_values,y = log_likelihood))+
+  geom_point(size = 4, color = "blue")+
+  labs(title = "Log-likelihood of a single data point over multiple lambda values",
+       subtitle = "(we will look for a maximum)",
+       caption = "Math 32",
+       x = "lambda",
+       y = "log-likelihood") +
+  theme_bw() 
+```
+
+### MLE over all values
+
+```{r}
+LL_poisson <- function(lambda, y){
+  # log-likelihood by summing 
+  LL <- sum(dpois(y, lambda, log=TRUE))
+  return(LL)
+}
+lambda_values <- seq(1, 20, by = 0.01)
+
+# compute log-likelihood for all data, for all lambda values
+LL <- sapply(lambda_values, function(x){ LL_poisson(x, data_pois) })
+
+# save the lambdas and log-likelihoods in a data frame
+df <- data.frame(LL, lambda_values)
+
+df %>% 
+  ggplot(aes(x = lambda_values,y = LL)) +
+  geom_point(color = "blue") +
+  geom_vline(xintercept = lambda_values[which.max(LL)], color = "red", size = 2) +
+  labs(title = "Maximum Likelihood Estimation",
+       subtitle = "using the log-likelihood (original data had lambda = 5)",
+       caption = "Math 32",
+       x = "lambda",
+       y = "log-likelihood") +
+  theme_bw()
+```
+```{r}
+# the MLE value itself
+lambda_values[which.max(LL)]
+```
+
+
+
+# Exercises
+
+## 1. MLE over an Uniform Distribution
+
+Here we generate $n$ independent uniformly distributed random numbers ($x_1, x_2, \dots, x_n$) on an interval from $[0,a]$ where you specify the value of $a$. 
+
+```{r, eval = TRUE}
+a <-32
+N <- 100
+data_unif <- runif(N, 0, a)
+likelihood_unif <- function(a, data){
+  temp <- dunif(data, 0, a)
+  return(prod(temp, na.rm = TRUE))
+}
+```
+
+### 1A 
+
+Describe the graph and calculations in your own words.
+
+Answer: For the calculations, a_values is the parameter space used to compute likelihood. Lh is the log-likelihoods for each parameter value of a. Then a and log-likelihoods is saved in a data frame.
+For the graph, it shows how the likelihood varies over different values of a and the red vertical line shows the MLE of a where the likelihood is highest.
+
+```{r}
+# compute likelihood for all data, for many guesses at parameter a
+a_values <- seq(1, 50, by = 0.01)
+LH <- sapply(a_values, function(x){ likelihood_unif(x, data_unif) })
+df <- data.frame(a_values, LH)
+
+# graph the likelihood curve
+df %>% 
+  ggplot(aes(x = a_values, y = LH)) +
+  geom_vline(xintercept = a_values[which.max(LH)], color = "red", size = 2) +
+  geom_point(color = "blue") +
+  labs(title = "Maximum Likelihood Estimation",
+       subtitle = "using the likelihood (original data had a = 32)",
+       caption = "Math 32",
+       x = "a",
+       y = "likelihood") +
+  theme_bw()
+```
+
+
+### 1B
+
+Use a line of R code to empirically determine the maximum likelihood choice for $a$ from your likelihood. 
+
+```{r}
+MLE = a_values[which.max(LH)]
+```
+
+## 2: MLE over an Exponential Distribution
+
+The data file `obsExpData.csv` contains a data set of 1000 independent points sampled from an exponential distribution with unknown parameter $\lambda > 0$.
+
+NOTE:  If this next code block does not work for you, set `eval = FALSE` and re-run all of the `R` code blocks.  However, you will need to be able to debug this error for next week's homework ("put everything in your Math 32 folder").
+
+```{r, eval = FALSE, message = FALSE, warning = FALSE}
+data_obs <- read_csv("obsExpData.csv")
+```
+
+Remember that the probability density function of a normal distribution is given as follows:
+$$\Huge f(x) = \lambda e^{-\lambda x}$$
+
+### 2A
+
+Describe the following function
+
+The function takes as parameters mu =1 and sample_data then calculates the exponential distribution.
+
+```{r}
+LL_exp <- function(mu = 1, sample_data){
+  lambda <- 1/mu
+  n <- sum(!is.na(sample_data)) #sample size
+  this_sum <- sum(sample_data, na.rm = TRUE)
+  loglikelihood <- n*log(lambda) - this_sum * lambda
+  loglikelihood #return
+}
+```
+
+### 2B
+
+Describe the graph and calculations in your own words.
+
+For the calculations, mu_values is the parameter space. LL_values is the log-likelihoods for each parameter value of mu_values. LL_exp is the MLE over an exponential distribution. Then mu_values and log-likelihoods is saved in a data frame.
+For the graph, it shows how the log likelihood varies over different values of mu and the red vertical line shows the MLE of mu where the likelihood is highest.
+
+```{r}
+# values to guess toward MLE
+mu_values <- seq(1, 5, by = 0.01)
+
+# compute log-likelihood for all data, for all lambda values
+LL_values <- sapply(mu_values, function(x){ LL_exp(x, data_obs) })
+
+# save the lambdas and log-likelihoods in a data frame
+df <- data.frame(mu_values, LL_values)
+
+df %>% 
+  ggplot(aes(x = mu_values, y = LL_values)) +
+  geom_vline(xintercept = mu_values[which.max(LL_values)],
+             color = "red", size = 2) +
+  geom_point(color = "blue") +
+  labs(title = "Maximum Likelihood Estimation",
+       subtitle = "using the log-likelihood",
+       caption = "Math 32",
+       x = "mu",
+       y = "log-likelihood") +
+  theme_bw()
+```
+
+### 2C
+
+Use a line of R code to empirically determine the maximum likelihood choice for $a$ from your likelihood. 
+
+```{r}
+
+MLE = mu_values[which.max(LL_values)]
+
+```
+
+
+# Wrap-Up
+
+## Reflection
+
+Reflection:  write at least two sentences below about this assignment.
+
+I learned a lot from this assignment. As a CSE major, learning a new language was interesting.
+
+    
+## Submission
+
+* Use the `Knit` button (at top of script editor) and `knit to HTML`
+* upload today's HTML back to our `CatCourses` page

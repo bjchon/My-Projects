@@ -1,0 +1,30 @@
+Individual Assignment 1
+
+Line #7 
+I-format
+machine code in hex: 0x2010fff1
+binary: 001000 00000 10000 1111111111110001
+    opcode: 8  rs:0   rt:16   immediate: -15
+	addi   $zero   $s0     -15
+	addi $s0, $zero, -15
+
+Line #14
+R-format
+machine code in hex: 0x0211402a
+binary: 000000 10000 10001 01000 00000 101010
+   opcode: 0   rs:16($s0) rt:17($s1) rd:8($t0)  shamt:0 funct: 42 = 0x2a (slt)
+       slt $t0, $s0, $s1
+
+Line #17
+I- format
+machine code in hex: 0x11000006
+binary: 000100 01000 00000 0000000000000110
+      opcode: 4(beq) rs: 8($t0) rt: 0 immediate: 6(6 lines after next instruction)
+	beq $t0, $zero, LEEQ
+Line #20
+J- format
+machine code in hex: 0x08100007
+binary: 00001000000100000000000000000111
+J-Format shift left 2 and add 00 at end: 0010 0000010000000000000000011100
+                                     opcode: 2(j)  target address in hex: 0x0040001C(address of GRT)
+					j GRT

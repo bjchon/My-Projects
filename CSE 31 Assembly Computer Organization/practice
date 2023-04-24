@@ -1,0 +1,28 @@
+.data
+
+.text
+main: 
+li $a1, 2
+li $a2, 8
+addi $v1, $zero, 0 
+
+l: 
+
+beq $a2, $zero, done 
+andi $t0, $a1, 1 
+
+
+beq $t0, $zero, s
+  add $v1 $v1, $a2   #
+
+
+ s: srl $a2, $a2, 1 
+
+   srl $a1, $a1, 1    # 
+
+ j l
+
+done: 
+	addi $a0, $v1,0
+	li $v0, 1
+	syscall

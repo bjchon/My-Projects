@@ -1,0 +1,55 @@
+1) small on chip memory that lets RAM access information quickly
+2)
+3) 
+4) 4 offset bits, 16, no it's not practical because it's too small
+5) 6, block size = 2^n, 64 = 2^6
+6) number of blocks * block size, index bits is equal to log base 2 of block size
+7) becomes the tag
+8) a) 1000000
+b) log2(number block size), 3
+c) 16 blocks = 128/8
+d) log2(number of blocks), 4 bits
+e) 13= 20 - 3 -4 
+f)      valid   dirtybit   tag     data blocks
+index     1        0        13         64 
+1                                                ^
+2                                                .    cache blocks
+3                                                .
+4                                                .
+.
+.
+.
+1024
+                          address
+           tag         index       offset
+
+g) number of bits per row = [13 + 1 + 8*8] = 78 bits 
+
+
+TPS Activity 2
+
+1) Misses, each memory address is associated with one possible block in cache. Conflict Miss is introduced.
+2) 
+3) number of sets = 1024/4 = 256
+   index bit = log2(256) = 8 bits
+   number of bits = log2(number of blocks/associativity)
+4) a) main memory size = 2^20 = 1MB
+   b) offset bits = 2^8 = 3 bit
+   c) number of blocks = 128/8 = 16
+   d) number of sets = 16/2 = 8 sets
+   e) index bits = log2(16) = 4 bits
+   f) tag bits = 20 - offset bit - index bits = 13 bits
+   g) valid   dirtybit   tag     data blocks
+index
+1       1        1        13         64          ^
+2                                                .    cache blocks
+3                                                .
+4                                                .
+.
+.
+.
+1024
+                          address
+           tag         index       offset
+
+   h) number of bits per row = [13 +1 + 1 + 8*8] = 79 bits

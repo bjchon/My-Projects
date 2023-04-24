@@ -1,0 +1,27 @@
+TPS activity 1:
+
+1) 2
+2) four_ints doesn't change
+3) my answer is different from 2
+4) it prints 2 and I am surprised and lost
+5) a)1, four_ints[4]
+   b) yes, they both point to the same base address, 
+     four_c = (char*)four_ints (this statement casts an int pointer to a char pointer.)
+   c) They print the same hex just inverted because LIFO.
+6) the consecutive address locations differ by 4 because each array location is 4 bytes
+7) 
+8) the consecutive address location differ by 1 because each char location is 1 byte
+9)
+10) Depending on the pointer type it will access memory in different ways. When the 
+char pointer is incremented the the memory location is incremented by 1. 
+When the array pointer is incremented the array memory location is incremented by 4
+
+TPS activity 2:
+
+1) It allocates space off the heap to store a pointer of a pointer to an int.
+2) use a for loop: for(i = 0; i < n; ++n)
+3) *(*(arr+i) + j) = 0;
+4) the size is needed to determine the number of rows and columns
+5) 
+6)
+7)

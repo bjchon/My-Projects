@@ -1,0 +1,26 @@
+TPS activity 1
+	1) Ravi, Eric, Amy
+	2) https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners
+	   https://www.howtogeek.com/140679/beginner-geek-how-to-start-using-the-linux-terminal/
+	   https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
+	3) Shared with TPS partners
+	4) tutorials have been bookmarked
+
+TPS activity 2
+	1) Visual Studio
+	   a) yes
+	   b) it depends on the code your running
+	2) In the finder window.
+	3) drag and drop into terminal
+	4) mkdir
+
+TPS activity 3
+	1)https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/
+        https://linuxconfig.org/how-to-install-gcc-the-c-compiler-on-ubuntu-18-04-bionic-beaver-linux
+	3) gcc
+	4) no error message
+	5) makefile
+	6) debug
+	7) sudo chmod +x filename.bin
+	8) compiles code
+	9)

@@ -1,0 +1,25 @@
+TPS Activity 1
+
+1)Procedure is an idependent code module that fulfills some concrete task and is referenced within a larger body of source code.
+Functions are a set of instructions bundled together to achieve a specific outcome.
+Method is a subroutine attached to a specific class defined in source code. Similar to function but methods can only be called by an object created from a class.
+2) 
+3) 
+4) 20
+5) yes
+6) 11, $ra, 0, no
+7) error
+8) 0x00400028
+9) Yes, decimal is converted to hex
+10) 4194344 in decimal, 15
+11) jal
+12) 
+
+TPS Activity 2
+
+1) 38
+2) 
+3)jal returns to main, when jal is used again it returns to sum
+4) 
+5) $s0 = x becomes $s0 = m. yes, it changes the intended calculations, storing the address would fix the problem
+6) 

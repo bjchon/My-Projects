@@ -1,0 +1,185 @@
+---
+title: "Confidence Intervals and NHST"
+author: "[your name]"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("infer")     #tools to easily code confidence intervals and NHST
+library("tidyverse") #data wrangling tools such as filter
+```
+
+The materials for this homework assignment come from Chapters 8 and 9 of **Statistical Inference via Data Science:** *A Modern Dive into R and the Tidyverse* along with the class lectures.
+
+* [https://moderndive.com/8-confidence-intervals.html](https://moderndive.com/8-confidence-intervals.html)
+* [https://moderndive.com/9-hypothesis-testing.html](https://moderndive.com/9-hypothesis-testing.html)
+
+# Data
+
+```{r, message = FALSE, warning = FALSE}
+df <- read_csv("demographics_survey_data.csv")
+```
+
+# Confidence Intervals
+
+## Friendships
+
+The survey question was "How many friends do you talk to at least once per month?"
+
+(A) View the `summary` of the `friends` variable from the `df` data frame.
+
+```{r}
+
+```
+
+(B) Create a *bootstrap distribution* of the `friends` variable.
+
+```{r}
+
+```
+
+(c) Plot the bootstrap distribution `visualize` (from the `infer` package) along with the confidence interval layer for a 95% confidence interval.
+
+```{r}
+
+```
+
+(D)  Finally, compute the endpoints of the 95% confidence interval, and type a complete sentence to describe the results.
+
+```{r}
+
+```
+
+
+
+## Recommend UCM?
+
+The survey question was "On a scale from 0 ("would not") to 100 ("highly"), how much would you recommend UC Merced to people that are about to apply to college?"
+
+(A) View the `summary` of the `recommendUCM` variable from the `df` data frame.
+
+```{r}
+
+```
+
+(B) Create a *bootstrap distribution* of the `friends` variable.
+
+```{r}
+
+```
+
+(c) Plot the bootstrap distribution `visualize` (from the `infer` package) along with the confidence interval layer for a 95% confidence interval.
+
+```{r}
+
+```
+
+(D)  Finally, compute the endpoints of the 95% confidence interval, and type a complete sentence to describe the results.
+
+```{r}
+
+```
+
+
+
+# Hypothesis Testing
+
+## Procrastination vs Partying
+
+The survey questions were
+
+* "Do you consider yourself to be a procrastinator?"
+* "Do you plan to attend at least one party per month this semester?"
+
+* colloquial hypothesis: Party goers are more likely to be procrastinators
+* null hypothesis: Procrastinator proportion is the same regardless of party going plans
+* alternative hypothesis: Party goers are more likely to be procrastinators
+
+* predictor variable (categorical): `parties`
+* response variable (categorical): `procrastinator`
+
+In this scenario, our one-sided hypothesis test looks at a difference of two proportions.
+
+$$\begin{array}{rrcl}
+  H_{0}: p_{Y} - p_{N} & = & 0 \\
+  H_{a}: p_{Y} - p_{N} & > & 0 \\
+\end{array}$$
+
+(a) Compute the observed difference in proportions for the procrastination grouped by parties
+
+```{r}
+# table(demo_df$procrastinator)
+# table(demo_df$parties)
+```
+
+(b) Build a null distribution toward the hypothesis test.
+
+```{r}
+
+```
+
+(c) Use the `visualize` function to graph the null distribution and shade the p-value.
+
+```{r}
+
+```
+
+(d) Compute the p-value for the hypothesis test, and then write a sentence to describe the conclusion of the hypothesis test.
+
+```{r}
+
+```
+
+
+
+## Homesickness vs UC Merced as a top-choice school
+
+The survey questions were
+
+* "On a scale from 0 to 100, how homesick are you?"
+* "When applying and accepting college, was UC Merced your top choice?"
+
+* null hypothesis: Homesickness levels are the same whether or not UC Merced was the student's top choice.
+* alternative hypothesis: Homesickness levels are different whether or not UC Merced was the student's top choice.
+
+* predictor variable (categorical): `UCMtopChoice`
+* response variable (numerical): `homesickness`
+
+In this scenario, our one-sided hypothesis test looks at a difference of two means.
+
+$$\begin{array}{rrcl}
+  H_{0}: \mu_{Y} - \mu_{N} & = & 0 \\
+  H_{a}: \mu_{Y} - \mu_{N} & \neq & 0 \\
+\end{array}$$
+
+(a) Compute the observed difference in means for the homesickness grouped by students who felt UC Merced was their top choice.
+
+```{r}
+# table(demo_df$UCMtopChoice)
+# summary(demo_df$homesickness)
+```
+
+(b) Build a null distribution toward the hypothesis test.
+
+```{r}
+
+```
+
+(c) Use the `visualize` function to graph the null distribution and shade the p-value.
+
+```{r}
+
+```
+
+(d) Compute the p-value for the hypothesis test, and then write a sentence to describe the conclusion of the hypothesis test.
+
+```{r}
+
+```
+
+
+# Wrap Up
+
+When you are done and your code is free of errors, use the `Knit` button to `Knit to HTML`.  Upload the HTML file back to CatCourses.

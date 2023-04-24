@@ -1,0 +1,55 @@
+TPS activity 1:
+1) Ravi, Eric, Amy
+2)https://www.tutorialspoint.com/gnu_debugger/installing_gdb.htm
+http://www.gdbtutorial.com/tutorial/how-install-gdb
+https://ostoday.org/linux/how-install-gdb-linux.html
+3) Shared
+4) BOOKMARKED
+
+TPS activity 2:
+1)$ cc 'file path'
+   $ ./a.out
+2) $ cc -g 'file path'
+3)   $ gdb a.out
+4) a point in the code where the program will stop executing,
+   break line number
+5) run
+   n
+6) print
+7) c
+8) quit
+
+TPS activity 3:
+1) 4, 2
+2) 0, variables declared assigned no value
+3) initialize to 0
+4) 000000000061FE1C
+000000000061FE18
+5) 0
+,0
+,000000000061FE0C
+,000000000061FE08
+, 000000000061FE0C
+,000000000061FE08
+6), 7), 8)
+#include <stdio.h>
+int main() 
+{
+int x = 0, y = 0, *px, *py;
+int arr[10] ={0};
+printf("printer\n");
+px = &x;
+py = &y;
+printf("%d\n,%d\n,%p\n,%p\n, %p\n,%p\n,", *px, *py, px, py, &x,&y);
+for(x = 0; x <10; x++)
+    {*(arr + x) = x;
+    printf("%d\n", *(arr +x));
+    }
+printf("%p\n", arr);
+return 0;
+}
+
+
+
+
+   

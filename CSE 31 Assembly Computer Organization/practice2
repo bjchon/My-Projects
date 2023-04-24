@@ -1,0 +1,10 @@
+.data
+
+.text
+li $a0, 1
+sll $v0, $a0, 2    # x << 8 
+add $v0, $v0, $a0 
+addi $a0, $v0, 0
+li $v0, 1
+syscall
+ 

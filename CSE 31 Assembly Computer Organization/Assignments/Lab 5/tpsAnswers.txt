@@ -1,0 +1,24 @@
+TPS Activity 1
+1) MIPS Assembler and Runtime Simulator
+2) 
+3)
+4)a)copy and paste the code, or open the file through MARS
+b) f3
+c) f5
+d) no
+e) f3 then f7
+f) assemble again
+
+
+TPS Activity 2
+
+1) identifiers where we declare variables. subsequent items stored in data segment at next available address
+   .word stores the listed vallue 32 bit words boundary 
+2) beq, bramch if equal, checks if t3 is equal to o, if so moves to finish
+3) recursion, loops back to fib
+4) goto execute and check the box you want the breakpoint
+5) click on arrow button
+6) the registers on the right side under value
+7) 0x10010000, 233
+8) tells the code it's about to terminate
+   syscall :Issue a system call : Execute the system call specified by value in $v0

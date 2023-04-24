@@ -1,0 +1,7 @@
+Individual Assignment 1:
+1) 18
+2) ampersand & in front of input
+3) sum is equal to zero
+4) pass by pointer
+
+Individual Assignment 2:

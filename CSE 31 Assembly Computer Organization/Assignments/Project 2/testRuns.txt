@@ -1,0 +1,91 @@
+Enter size of list (between 1 and 25): 4
+Enter one list element: 4
+Enter one list element: 3
+Enter one list element: 2
+Enter one list element: 1
+Content of original list: 4 3 2 1 
+Content of sorted list: 1 2 3 4 
+Enter a key to search for: 2
+Key found!
+-- program is finished running --
+
+Enter size of list (between 1 and 25): 5
+Enter one list element: 24
+Enter one list element: 21
+Enter one list element: 2
+Enter one list element: 10
+Enter one list element: 15
+Content of original list: 24 21 2 10 15 
+Content of sorted list: 2 10 15 21 24 
+Enter a key to search for: 1
+Key not found!
+-- program is finished running --
+
+Enter size of list (between 1 and 25): 8
+Enter one list element: 5
+Enter one list element: 22
+Enter one list element: 6
+Enter one list element: 19
+Enter one list element: 20
+Enter one list element: 7
+Enter one list element: 8
+Enter one list element: 2
+Content of original list: 5 22 6 19 20 7 8 2 
+Content of sorted list: 2 5 6 7 8 19 20 22 
+Enter a key to search for: 19
+Key found!
+-- program is finished running --
+
+Enter size of list (between 1 and 25): 2
+Enter one list element: 20
+Enter one list element: 5
+Content of original list: 20 5 
+Content of sorted list: 5 20 
+Enter a key to search for: 20
+Key found!
+-- program is finished running --
+
+Enter size of list (between 1 and 25): 1
+Enter one list element: 6
+Content of original list: 6 
+Content of sorted list: 6 
+Enter a key to search for: 6
+Key found!
+-- program is finished running --
+
+Enter size of list (between 1 and 25): 11
+Enter one list element: 4
+Enter one list element: 6
+Enter one list element: 1
+Enter one list element: 9
+Enter one list element: 24
+Enter one list element: 7
+Enter one list element: 2
+Enter one list element: 15
+Enter one list element: 3
+Enter one list element: 9
+Enter one list element: 10
+Content of original list: 4 6 1 9 24 7 2 15 3 9 10 
+Content of sorted list: 1 2 3 4 6 7 9 9 10 15 24 
+Enter a key to search for: 9
+Key found!
+-- program is finished running --
+
+Enter size of list (between 1 and 25): 12
+Enter one list element: 1
+Enter one list element: 2
+Enter one list element: 3
+Enter one list element: 8
+Enter one list element: 6
+Enter one list element: 4
+Enter one list element: 10
+Enter one list element: 11
+Enter one list element: 14
+Enter one list element: 21
+Enter one list element: 20
+Enter one list element: 19
+Content of original list: 1 2 3 8 6 4 10 11 14 21 20 19 
+Content of sorted list: 1 2 3 4 6 8 10 11 14 19 20 21 
+Enter a key to search for: 12
+Key not found!
+-- program is finished running --

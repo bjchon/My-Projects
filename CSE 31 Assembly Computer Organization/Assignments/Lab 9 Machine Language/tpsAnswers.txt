@@ -1,0 +1,30 @@
+TPS 1
+
+4) 32
+5) 3 formats(I,J,R), I-format(lw,sw), J-format (j, jal), R-format(add, sub)
+6) a) addi is I format, 4, opcode
+   b) hex 8, $zero, 0, $s0, 19, 19
+   c) 
+7) a) 0x0230402a, 000000 10001 10000 01000 00000 101010
+   b) R format, opcode section is equal to 0, 6 fields, (opcode, rs, rt, rd, shamt, funct)
+   c) opcode = 0, rs = 11, rt = 10, rd = 8, shamt = 0, funct = 2A
+   d) R[rd] = (R[rs] < R[rt]) ? 1 : 0, source code uses slt, set $t0 to 1 if $s1 < $s0
+   e) syscall, yes
+
+8) a) 0x15000001, 000101 01000 00000 0000000000000001, I format
+   b) opcode = 5, rs = 8, rt = 0, immediate = 1
+   c) LESS, 0x0040001c
+   d) no, because it's the address not the value to be used in the immediate
+   e) It's the last 16 digits of the instruction in binary, 1
+   f) binary: 001001 00000 00010 0000000000000100
+      hex: 0x24020004
+      YES
+
+9) a) J format, 2
+   b) opcode = 2
+   c) GREQ, 0x00400030
+   d) 26, add two 0's to the end of the target address to equal 28 bits, optimization and word aligned, 
+     000100 0000 0000 0000 0011 0000
+   e) hex: 0x0810000c
+      binary: 000010 000001 0000 0000 0000 0000 1100
+      YES
