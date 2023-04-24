@@ -1,0 +1,44 @@
+
+**** 08/05/22 12:42:30 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ C:\Users\bdawg\OneDrive\Desktop\UC Merced\Summer 2022\ENGR 065 Circuit Theory\Lab\Lab 9-PSpiceFiles
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ms 0 5us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB 9
+V_V1         N14428 0  
++PULSE 0 10 0 0 0 1ms 2ms
+R_R1         N14428 N14435  10k TC=0,0 
+L_L1         N14435 N14435  10mh  
+C_C1         0 N14435  .01u  TC=0,0 
+
+**** RESUMING sim1.cir ****
+.END
+
+ERROR(ORPSIM-15143): Voltage source and/or inductor loop involving L_L1. You may break the loop by adding a series resistance
+

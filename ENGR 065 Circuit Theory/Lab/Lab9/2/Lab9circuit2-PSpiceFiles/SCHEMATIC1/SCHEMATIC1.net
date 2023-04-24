@@ -1,0 +1,6 @@
+* source LAB9CIRCUIT2
+V_V1         N14432 0  
++PULSE 0 10 0 0 0 1ms 2ms
+C_C1         0 N14439  .01u  TC=0,0 
+R_R1         N14432 N14439  10k TC=0,0 
+L_L1         0 N14439  10mh  

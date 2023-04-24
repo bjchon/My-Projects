@@ -1,0 +1,9 @@
+The conversion of the project was successful.
+
+The new directory structure is as follows:
+
+C:/Users/bdawg/OneDrive/Desktop/UC Merced/Summer 2022/ENGR 065 Circuit Theory/Lab/Lab9/2
+    Lab9circuit2.opj
+    lab9circuit2.dsn
+C:/Users/bdawg/OneDrive/Desktop/UC Merced/Summer 2022/ENGR 065 Circuit Theory/Lab/Lab9/2/Lab9circuit2-PSpiceFiles
+C:/Users/bdawg/OneDrive/Desktop/UC Merced/Summer 2022/ENGR 065 Circuit Theory/Lab/Lab9/2/Lab9circuit2-PSpiceFiles/SCHEMATIC1

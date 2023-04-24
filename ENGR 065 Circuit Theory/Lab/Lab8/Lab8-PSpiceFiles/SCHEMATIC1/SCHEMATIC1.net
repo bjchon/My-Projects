@@ -1,0 +1,5 @@
+* source LAB8
+V_V1         0 N14411  
++PULSE 0 10 0 0 0 0 4ms
+C_C1         N14418 0  1u  TC=0,0 
+R_R1         N14411 N14418  1k TC=0,0 

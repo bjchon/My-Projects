@@ -1,0 +1,89 @@
+
+**** 08/04/22 13:16:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim1"  [ C:\Users\bdawg\OneDrive\Desktop\UC Merced\Summer 2022\ENGR 065 Circuit Theory\Lab\Lab8\Lab8-PSpiceF
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Sim1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1s 0 5us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB8
+V_V1         N14423 0  
++PULSE 0 10 0 0 0 4ms 2pw
+R_R1         N14423 N14430  1k TC=0,0 
+C_C1         0 N14430  1u  TC=0,0 
+
+**** RESUMING Sim1.cir ****
+.END
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for V_V1.
+
+**** 08/04/22 13:16:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim1"  [ C:\Users\bdawg\OneDrive\Desktop\UC Merced\Summer 2022\ENGR 065 Circuit Theory\Lab\Lab8\Lab8-PSpiceF
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14423)    0.0000 (N14430)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/04/22 13:16:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Sim1"  [ C:\Users\bdawg\OneDrive\Desktop\UC Merced\Summer 2022\ENGR 065 Circuit Theory\Lab\Lab8\Lab8-PSpiceF
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        3.19
+  Total job time (using Solver 1)   =        1.36
+

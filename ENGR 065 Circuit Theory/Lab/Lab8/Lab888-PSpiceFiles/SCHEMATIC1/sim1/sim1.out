@@ -1,0 +1,87 @@
+
+**** 08/04/22 14:35:10 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ C:\Users\bdawg\OneDrive\Desktop\UC Merced\Summer 2022\ENGR 065 Circuit Theory\Lab\Lab8\Lab888-PSpic
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1 0 5us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB888
+V_V1         N14444 0  
++PULSE 0 10 0 0 0 0 4ms
+R_R1         N14444 N14451  1k TC=0,0 
+L_L1         0 N14451  5mh  
+
+**** RESUMING sim1.cir ****
+.END
+
+**** 08/04/22 14:35:10 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ C:\Users\bdawg\OneDrive\Desktop\UC Merced\Summer 2022\ENGR 065 Circuit Theory\Lab\Lab8\Lab888-PSpic
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14444)    0.0000 (N14451)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/04/22 14:35:10 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim1"  [ C:\Users\bdawg\OneDrive\Desktop\UC Merced\Summer 2022\ENGR 065 Circuit Theory\Lab\Lab8\Lab888-PSpic
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        3.88
+  Total job time (using Solver 1)   =         .72
+

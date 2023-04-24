@@ -1,0 +1,44 @@
+
+**** 08/04/22 13:34:59 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-sim4"  [ C:\Users\bdawg\OneDrive\Desktop\UC Merced\Summer 2022\ENGR 065 Circuit Theory\Lab\Lab8\Lab8-PSpiceF
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim4.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 5us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LAB8
+V_V1         N14411 0  
++PULSE 0 10 0 0 0 4ms 2 PW
+------------------------$
+ERROR -- Expecting keyword STIMULUS, saw PW.
+
+C_C1         0 N14418  1u  TC=0,0 
+R_R1         N14411 N14418  1k TC=0,0 
+
+**** RESUMING sim4.cir ****
+.END
+
