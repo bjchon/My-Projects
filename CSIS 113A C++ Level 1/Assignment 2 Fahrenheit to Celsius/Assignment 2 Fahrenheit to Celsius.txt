@@ -1,0 +1,34 @@
+//Bryant Chon
+//CSIS 113A-1926
+// 2/7/2019
+// Assignment 2
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+double start; // creates variable start
+double stop; // creates variable stop
+double step; // creates variable step
+cout << "Enter Fahrenheit Start: ";// outputs and prompts user to enter hours worked
+cin >> start;// inputs the variable start
+cout << endl; // creates space between lines
+cout << "Enter Fahrenheit Stop: "; //outputs and prompts user to enter fahrenheit stop
+cin >> stop; //inputs variable stop
+cout << endl;// creates space between lines
+cout << "Enter Fahrenheit Step: "; //outputs and prompts user to enter fahrenheit step
+cin >> step;// inputs variable step
+cout << endl; // creates space between lines
+cout << "Fahrenheit" << "\t" << "Celsius" << endl; // outputs the words Fahrenheit and Celsius into 2 columns
+cout << endl; //creates space between lines
+for (double fah = start; fah <= stop; fah += step) // creates loop for fahrenheit, fah is equal to start, fah is less than or greater than stop, and increases by increments of step
+{
+cout<<fah<<"\t"<<"\t"<<std::fixed<<std::setprecision(1) << 5 * (fah - 32) / 9 <<endl; // calculates celsius from fahrenheit inputs
+
+}
+
+
+return 0;
+}

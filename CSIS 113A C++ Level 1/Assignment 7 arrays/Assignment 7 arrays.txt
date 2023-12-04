@@ -1,0 +1,136 @@
+//resubmitted added extra prototype of my own design to display good and bad teams
+//Bryant Chon
+//CSIS 113A-1926
+//4/23/2019
+//Assignment 7
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void displayAll(string arr1[], int arr2[], int arr3[], int size);// creates prototype to display all the arrays
+void team(string arry1[], int arry2[], int arry3[], int size);// creates prototype to display good and bad teams
+int avgWins(int arr2[], int size);// creates prototype to display the average number of wins
+int avgLosses(int arr3[], int size);// creates prototype to display the average number of losses
+int minWins(int arr3[], int size);// creates prototype to display the worst team
+int maxWins(int arr2[], int size);// creates prototype to display the best team
+int keyInput(string input, string arr1[], int size);// creates prototype to display the wins and losses of team chosen by user
+
+int main()
+{
+string input;// creates variable string input
+char choice;// creates variable character choice
+cout << "The Wins and Losses of the NBA Western Conference" << endl << endl;// outputs the title of the program
+string names[] = { "nuggets", "trailblazers", "jazz", "thunder", "timberwolves", "warriors", "clippers" , "kings", "lakers", "suns", "rockets", "spurs", "grizzlies", "pelicans", "mavericks"};// creates array of team names
+int wins[] = { 54, 53, 50, 49, 36, 57, 48, 39, 37, 19, 53, 48, 33, 33, 33};// creates array of wins
+int losses[] = {28, 29, 32, 33, 46, 25, 34, 43, 45, 63, 29, 34, 49, 49, 49};// creates array of losses
+displayAll(names, wins, losses, 15);
+cout << endl << "Most Wins " << endl << names[maxWins(wins, 15)] << " " << wins[maxWins(wins, 15)] <<" wins " << losses[maxWins(wins, 15)] << " lossses "<< endl << endl;// outputs the best team and their wins and losses
+cout << "Most Losses " << endl << names[minWins(wins, 15)] << " " << wins[minWins(wins, 15)] << " wins " << losses[minWins(wins, 15)] << " lossses " << endl;// outputs the worst team and their wins and losses
+cout << endl << "Average Wins: " << avgWins(wins, 15);// outputs the average number of wins
+cout << endl << "Average Losses: " << avgLosses(losses, 15) << endl << endl;// outputs the average number of losses
+team(names, wins, losses, 15);
+
+do// creates a do loop
+{
+cout << endl << "Enter Team Name: ";// outputs the prompt
+cin >> input;// inputs the input
+cout << endl << input << " " << wins[keyInput(input, names, 15)] << " wins " << losses[keyInput(input, names, 15)] << " losses" << endl << endl;// outputs the user chosen team and their wins and losses
+cout << "Go Again? (Y?N) ";// prompts user
+cin >> choice;// inputs the choice
+} while (toupper(choice) == 'Y'); // loops again if user choose y
+
+cout << endl << "Thanks for Using The Wins and Losses of the NBA Western Conference Program" << endl;// outputs the end of the program mssg
+
+return 0;
+}
+
+void displayAll(string arr1[], int arr2[], int arr3[], int size)// creates the function to display all the arrays
+{
+for (int x = 0; x < size; x++)// creates for loop
+cout << arr1[x] << " " << arr2[x] << " wins " << arr3[x] << " losses " << endl;//outputs the team and their wins and losses
+}
+
+void team(string arry1[], int arry2[], int arry3[], int size)// creates the function to display good and bad teams
+{
+for (int x = 0; x < size; x++)// creates for loop
+{
+if (arry2[x] > arry3[x])// creates if statement for good teams
+cout << arry1[x] << " Good Team" << endl;// outputs good teams
+if (arry2[x] < arry3[x])// creates if statement for bad teams
+cout << arry1[x] << " Bad Team" << endl;// outputs bad teams
+}
+}
+
+int maxWins(int arr2[], int size)// creates function to display the best team
+{
+int iMax;// creates variable iMax
+int max;// creates variable max
+max = arr2[0];// gives max an initial value
+for (int x = 1; x < size; x++)// creates for loop
+{
+if (arr2[x] > max)// creates if statement to get the max value
+{
+max = arr2[x];// gives max a new value if greater initial value
+iMax = x;// gets the index
+}
+}
+return iMax;// returns the index
+}
+
+int minWins(int arr3[], int size)// creates function to display the worst team
+{
+int iMin, min;// creates variables
+min = arr3[0];// sets initial value of min
+
+for (int x = 1; x < size; x++)// creates for loop
+{
+if (arr3[x] < min)// creates if statement to get the min value
+{
+min = arr3[x];// gives min a new value if less than initial value
+iMin = x;// gets index
+}
+
+}
+return iMin;// returns the index
+}
+
+int keyInput(string input, string arr1[], int size)// creates function for user input
+{
+int indexInput = 0;// sets initial value
+for (int x = 0; x < size; x++)// creates for loop
+{
+if (arr1[x] == input)// creates if statement
+{
+arr1[x] = input;// user input is equal to array item
+indexInput = x;// gets the index
+}
+}
+return indexInput;// returns the index
+}
+
+int avgWins(int arr2[], int size)// creates function to get the average number of wins
+{
+int total = 0;// sets initial value to 0
+int average = 0; //sets initial value to 0
+for (int x = 0; x < size; x++)// creates for loop
+{
+total += arr2[x];// adds up all the wins
+average = total / size;// gets the average of the wins
+}
+return average;// returns the average wins
+
+}
+
+int avgLosses(int arr3[], int size)// creates function to get the average number of losses
+{
+int total = 0;// sets initial value to 0
+int average = 0;/// sets initial value to 0
+for (int x = 0; x < size; x++)// creates for loop
+{
+total += arr3[x];// adds up all the losses
+average = total / size;// gets the average of the losses
+}
+return average;// returns the avereage losses
+
+}
