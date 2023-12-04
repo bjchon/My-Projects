@@ -1,0 +1,53 @@
+//Bryant Chon
+//CSIS 113A-1926
+//3/12/2019
+//Assignment 4
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+cout << "Welcome to the High Low Guessing Game " << endl; //Outputs Title
+srand(time(0)); // seeds random number generator
+int guess, numguess, ans; // creates variables
+char response; // creates character variable response
+
+do //sets up do statement
+{
+numguess = 0; //assigns 0 to numguess
+ans = rand() % 100 + 1; // generates a random number between 1 and 100
+cout << "I'm thinking of a number between 1 and 100" << endl << endl; // outputs message
+
+do // sets up do statement
+{
+cout << "Enter Your Guess: "; // prompts user to guess number
+cin >> guess; // inputs the guess
+numguess++; // sets up numguess counter
+if (guess > ans) //sets up if statement
+cout << "Too High" << endl << endl; // outputs when above if statement is true
+else if (guess < ans) // sets else if statement
+cout << "Too Low" << endl << endl; //outputs when above else if statement is true
+else //sets up else statement which would be the answer
+cout << "Eureka! You got it in " << numguess << " guesses. "; // outputs when guess is equal to ans
+
+} while (guess != ans); //runs do statement while guess is not equal to ans
+
+if (numguess <= 4) //sets up if statement
+cout << "Your an Above Average Player. You Must be Psychic!" << endl; //outputs when numguess is less than or equal to 4
+else if (numguess <= 7) // sets up else if statement
+cout << "Your an average player. Keep Practicing!" << endl; //outputs when numguess is between 5 and 7
+else // sets up else statement
+cout << "Your a below average player. Don't quit your day job!" << endl; // outputs when numguess is over 7
+cout << endl << "Want to Play Again? Y/N" << endl; //outputs when guess is equal to guess
+cin >> response; //inputs response
+cout << endl; // creates new line
+
+} while (toupper(response) == 'Y'); //runs the whole program again if response is y
+
+cout << "Thanks for Playing The High Low Guessing Game" << endl; // outputs when the response is other than y
+
+return 0;
+}

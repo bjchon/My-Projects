@@ -1,0 +1,66 @@
+//Bryant Chon
+// CSIS 113A-1926
+// Assignment 5
+//3.31.2019
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+char choice; //creates character variable choice
+string Fname, Lname, accnumber; //creates string variables Fname, Lname, accnumber
+double bal = 0; //creates double variable bal
+double dep, with; // creates double variable dep and with
+
+cout << "Welcome to the CSIS 113A Bank " << endl << "Enter Customer Name: "; // outputs Welcome msg and prompts to enter name
+cin >> Fname >> Lname; // inputs first and last name
+cout << "Enter 8 Digit Account Number: "; // prompts user to enter accnumber
+cin >> accnumber; // inputs accnumber
+
+do // creates do statement
+{
+cout << endl << "A. Deposit" << endl << "B. Withdrawal" << endl << "C. Show Balance" << endl << "Q. Quit" << endl; // outputs menu
+cout << endl << "Choose from Menu: "; //prompts user to choose from menu
+cin >> choice; //inputs user's choice
+switch (toupper(choice)) //creates switch statement
+{
+
+case 'A': //creates case A
+cout << "Enter Deposit Amount: "; //prompts user to enter deposit amount
+cin >> dep; //inputs dep
+if(dep>0) // creates if statement
+bal += dep; // calculates when if is true
+if(dep<=0) // creates if statement
+cout << "Cannot Deposit Negative and Zero Amounts" << endl; // outputs when if statement is true
+break;
+
+case 'B': // creates case B
+cout << endl << "Enter Withdrawal Amount: "; // prompts user to enter deposit amount
+cin >> with; // inputs with
+if (with < bal) // creates if statement
+bal -= with; // calculates when if statement is true
+if (with > bal) // creates if statement
+cout << "Insufficient Funds" << endl; // outputs when if is true
+break;
+
+case 'C': // creates case C
+cout << endl << Fname + " " + Lname << endl << "xxxx-" << accnumber.substr(accnumber.length()-4,4) << endl << "Current Balance: " << bal << endl; // outputs when user wants to see balance
+break;
+
+case 'Q': //creates case Q
+cout << "Thank You for Being CSIS 113A Customer" << endl; // outputs when user quits
+break;
+
+default: // creates default
+cout << endl << "Not a valid choice" << endl; //outputs when none of the menu cases are chosen
+
+}
+
+} while(toupper(choice)!='Q'); // runs programs until user quits 'Q'
+
+return 0;
+}

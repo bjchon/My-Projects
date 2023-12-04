@@ -1,0 +1,31 @@
+
+Paper View
+;//Bryant Chon
+;// CSIS-113A-1926
+;// Assignment 1
+;// 1/31/2019
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+double hours;
+double rate;
+double totalgrosspay;
+double taxeswithheld;
+double totalnetpay;
+cout << "Enter Regular Hours Worked: ";//outputs and prompts user to enter hours worked
+cin >> hours;//inputs the variable hours worked
+cout << "Enter Rate of Pay: ";// outputs and prompts user to enter rate of pay
+cin >> rate;//inputs the variable rate of pay
+totalgrosspay = double(hours * rate);//calculates the total gross pay
+taxeswithheld = double(totalgrosspay * .28);// calculates the taxes withheld
+totalnetpay = double(totalgrosspay * .72);// calculates the total net pay after taxes
+cout << "Total Gross Pay: " << totalgrosspay << endl;// outputs on the screeen the total gross pay
+cout << "Taxes Withheld: " << taxeswithheld << endl;// outputs on the screen the taxes withheld
+cout << "Total Net Pay: " << totalnetpay << endl;// outputs on the screen the total net pay
+
+return 0;
+}

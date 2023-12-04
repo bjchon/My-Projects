@@ -1,0 +1,54 @@
+//Bryant Chon
+//CSIS 113A-1926
+// 2/26/2019
+// Assignment 3
+
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+cout << "Welcome to Fun with Multiplication" << endl; //outputs Title
+srand(time(0)); //seeds random number generator
+int num1, num2, ans, numProb, probcounter, numGuess, guess, accuracy; //creates variables
+char response; //creates character variable response
+cout << std::fixed << std::setprecision(1); //sets decimal place to 1
+
+do // sets up do statement
+{
+cout << endl << "How Many Multiplication Problems? " << endl; //asks user for number of problems
+cin >> numProb; //inputs number into numProb
+numGuess = 0; //sets numGuess to zero
+probcounter = 0; //sets probcounter to zero
+
+do // sets up do statement
+{
+probcounter++; //sets up number of problems counter
+num1 = rand() % 12 + 1; //generates random number to num1
+num2 = rand() % 12 + 1; //generates random number to num2
+ans = num1 * num2; // multiplies num1 and num2 and equals ans
+
+do // sets up do statement
+{
+numGuess++; //sets up number of guesses counter
+cout << endl << num1 << "x" << num2 << "="; // outputs num1 times num2 equals
+cin >> guess; //inputs answer into guess
+} while (guess != ans); // sets up while statement guess not equal to ans
+cout << "Correct" << endl; // outputs correct
+
+} while (probcounter != numProb); //sets up while statement as probcounter not equal to numProb
+
+double(accuracy) = 100 * (double(numProb)/double(numGuess));// calculates accuracy dividing numProb by num Guess
+cout << endl << "Congratulations on Completing your Mission!" << endl; //outputs after solving all problems
+cout << endl << "Problems: " << numProb << " Guesses: " << numGuess << " Accuracy: " << accuracy << "%" << endl; //presents user with results
+cout << endl << "Go Again Y or N ?"; //asks user if they want to go again
+cin >> response; //inputs character into response
+
+} while (toupper(response) == 'Y'); //sets up while statement to loop again if response if y
+cout << endl; //creates next line
+cout << "Thanks for using Fun with Multiplication" <<endl; // any response other than y outputs this message
+
+return 0;
+}
