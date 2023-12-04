@@ -1,0 +1,14 @@
+.boxTask1 {
+    border: 5px solid black;
+    padding: 1em;
+    height: 200px;
+    width: 300px;
+    overflow-y: scroll;
+  }
+
+  .boxTask2 {
+    border: 5px solid black;
+    height: 200px;
+    width: 300px;
+    overflow: hidden;
+  }

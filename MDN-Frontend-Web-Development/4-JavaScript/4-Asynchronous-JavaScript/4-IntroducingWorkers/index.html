@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Number of primes</title>
+    <script type="text/javascript" src="main.js" defer></script>
+    <link href="style.css"rel="stylesheet">
+  </head>
+
+  <body>
+    <h1>This is a Dedicated Worker Example- Used by a single script</h1>
+    <label for="quota">Number of primes:</label>
+    <input type="text" id="quota" name="quota" value="1000000">
+
+    <button id="generate">Generate primes</button>
+    <button id="reload">Reload</button>
+
+    <textarea id="user-input" rows="5" cols="62">Try typing in here immediately after pressing "Generate primes"</textarea>
+
+    <div id="output"></div>
+    <h1>Other Worker Types</h1>
+    <h2>Shared workers can be shared by several different scripts running in different windows.</h2>
+    <h2>Service workers act like proxy servers, caching resources so that web applications can work when the user is offline. They're a key component of Progressive Web Apps.</h2>
+</body>
+
+</html>

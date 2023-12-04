@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .highlight {
+                color: red;
+            }
+        math {
+                font-size: 200%;
+            }
+
+    </style>
+    <title>My page with scripted elements</title>
+    <link
+      rel="stylesheet"
+      href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
+</head>
+<body>
+    <math display="block">
+        <mroot>
+          <mrow>
+            <munder>
+              <mi>β</mi>
+              <mo>⎵</mo>
+            </munder>
+          </mrow>
+          <mn>3</mn>
+        </mroot>
+        <mo>+</mo>
+        <mfrac>
+          <mrow
+            ><mo>|</mo>
+            <mover>
+              <mi>α</mi>
+              <mo>→</mo>
+            </mover>
+            <mo>|</mo>
+          </mrow>
+          <msup>
+            <mi>s</mi>
+            <mn>3</mn>
+          </msup>
+        </mfrac>
+        <mo>−</mo>
+        <mrow>
+          <munderover>
+            <mo>∑</mo>
+            <mrow>
+              <mi>i</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+            </mrow>
+            <mi>n</mi>
+          </munderover>
+          <msqrt>
+            <mrow>
+              <msub>
+                <mi>a</mi>
+                <mi>i</mi>
+              </msub>
+              <mo>−</mo>
+              <msubsup>
+                <mi>K</mi>
+                <mn>0</mn>
+                <mi>i</mi>
+              </msubsup>
+            </mrow>
+          </msqrt>
+        </mrow>
+      </math>
+      <input type="button" id="clearOutput" value="Reset" />
+      <div id="output"></div>
+      <script>
+        const scriptedElements = Array.from(
+  document.querySelectorAll("msub, msup, msubsup, munder, mover, munderover"),
+);
+const outputDiv = document.getElementById("output");
+function clearHighlight() {
+  scriptedElements.forEach((scripted) => {
+    scripted.classList.remove("highlight");
+  });
+}
+scriptedElements.forEach((scripted) => {
+  scripted.addEventListener("click", () => {
+    clearHighlight();
+    scripted.classList.add("highlight");
+    outputDiv.insertAdjacentHTML(
+      "beforeend",
+      `<p><strong>You clicked an <code>&lt;${scripted.tagName}&gt;</code> element.</strong></p>`,
+    );
+  });
+});
+document.getElementById("clearOutput").addEventListener("click", () => {
+  clearHighlight();
+  outputDiv.innerHTML = "";
+});
+
+      </script>
+</body>
+</html>

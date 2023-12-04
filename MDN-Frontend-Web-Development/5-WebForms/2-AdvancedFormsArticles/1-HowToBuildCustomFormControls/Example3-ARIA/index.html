@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Custom Form Control JS</title>
+</head>
+<body class="no-widget">
+  <form>
+    <select name="myFruit">
+      <option>Cherry</option>
+      <option>Lemon</option>
+      <option>Banana</option>
+      <option>Strawberry</option>
+      <option>Apple</option>
+    </select>
+
+<!-- We add the role="listbox" attribute to our top element -->
+<div class="select" role="listbox">
+  <span class="value">Cherry</span>
+  <!-- We also add the role="presentation" to the ul element -->
+  <ul class="optList" role="presentation">
+    <!-- And we add the role="option" attribute to all the li elements -->
+    <li role="option" class="option">Cherry</li>
+    <li role="option" class="option">Lemon</li>
+    <li role="option" class="option">Banana</li>
+    <li role="option" class="option">Strawberry</li>
+    <li role="option" class="option">Apple</li>
+  </ul>
+</div>
+  </form>
+</body>
+</html>

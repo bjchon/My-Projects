@@ -1,0 +1,49 @@
+h1 {
+    color: red;
+}
+
+p {
+    color: green;
+}
+
+p,
+li {
+    color: green;
+}
+
+li {
+    list-style-type: square;
+}
+
+li.special,
+span.special {
+    color: orange;
+    font-weight: bold;
+}
+
+li em {
+    color: rebeccapurple;
+}
+
+/* means any p directly after h1*/
+h1 + p{
+    font-size: 200%;
+}
+
+a:link {
+    color:pink;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+a:visited {
+    color: green;
+}
+
+body h1 + p .special {
+    color:yellow;
+    background-color: black;
+    padding: 5px;
+}

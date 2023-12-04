@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sizing Test Your Skills</title>
+</head>
+<body>
+    <!--Task1
+    In this task, you have two boxes. The first should be sized so that 
+    the height will be at least 100 pixels tall, even if there is less 
+    content that would cause it to grow to that height. However, the 
+    content should not overflow if there is more content than fits in 
+    100 pixels. Test this box by removing the content from the HTML to 
+    make sure you still get a 100 pixel tall box even with no content.
+
+    The second box should be fixed at 100 pixels tall, so that content 
+    will overflow if there is too much.
+    -->
+    <div class="box box1">
+        <p>Veggies es bonus vobis. </p>
+    </div>
+      
+    <div class="box box2">
+        <p>        <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Gumbo beet greens corn soko endive gumbo gourd. </p>
+        Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Gumbo beet greens corn soko endive gumbo gourd. </p>
+    </div>
+    <!--Task2
+        In this task, you have a box, which contains another box. Your 
+        task is to make the inner box 60% of the width of the outer box. 
+        The value of the box-sizing property is set to border-box, which 
+        means that the total width includes any padding and border. You 
+        should also give the inner box padding of 10% using the width 
+        (or inline size) as the size from which that percentage is 
+        calculated.
+    -->
+
+    <div class="box Task2">
+        <div class="inner">Make me 60% of my parent's width.</div>
+    </div>
+
+    <!--Task3
+        In this task, you have two images in boxes. One image is smaller 
+        than the box, the other is larger and breaking out of the box. 
+        If you imagine that the box is responsive and therefore could grow
+         and shrink, which property would you apply to the image so that 
+         the large image shrinks down into the box but the small image 
+         does not stretch.
+    -->
+
+    <div class="box">
+        <img src="star.png" alt="star">
+      </div>
+      
+      <div class="box">
+        <img src="balloons.jpg" alt="balloons">
+      </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p {
+            padding: 0.5em;
+        }
+
+    </style>
+    <title>Underscripts and Overscripts</title>
+</head>
+<body>
+    <p>
+        <code>&lt;<span>????????</span>&gt;</code> element with exactly two children
+        (child1, child2):
+        <math>
+          <mover>
+            <mtext>child1</mtext>
+            <mtext>child2</mtext>
+          </mover>
+        </math>
+      </p>
+      <p>
+        <code>&lt;<span>????????</span>&gt;</code> element with exactly three children
+        (child1, child2 and child3):
+        <math>
+          <munderover>
+            <mtext>child1</mtext>
+            <mtext>child2</mtext>
+            <mtext>child3</mtext>
+          </munderover>
+        </math>
+      </p>
+      <p>
+        <code>&lt;<span>????????</span>&gt;</code> element with exactly two children
+        (child1, child2):
+        <math>
+          <munder>
+            <mtext>child1</mtext>
+            <mtext>child2</mtext>
+          </munder>
+        </math>
+      </p>
+      
+      <p><input type="button" id="showSolution" value="Show solution" /></p>
+      <script>
+        document.getElementById("showSolution").addEventListener("click", () => {
+        const maths = Array.from(document.getElementsByTagName("math"));
+        Array.from(document.getElementsByTagName("span")).forEach((span, index) => {
+            span.textContent = maths[index].firstElementChild.tagName;
+        });
+        });
+
+      </script>
+</body>
+</html>

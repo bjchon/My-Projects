@@ -1,0 +1,16 @@
+math {
+    font-family:
+      Latin Modern Math,
+      STIX Two Math;
+    font-size: 200%;
+  }
+  math .highlight {
+    background: pink;
+  }
+  math [id] .highlight {
+    background: lightblue;
+  }
+  p {
+    padding: 0.5em;
+  }
+  

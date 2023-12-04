@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--BlockQuotes-->
+    <p>
+        The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+        <em>HTML Block Quotation Element</em>) indicates that the enclosed text is an
+        extended quotation.
+    </p>
+
+    <p>Here is a blockquote:</p>      
+    <blockquote
+    cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+    <p>
+        The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+        <em>HTML Block Quotation Element</em>) indicates that the enclosed text is
+        an extended quotation.
+    </p>
+    </blockquote>
+    <!--Citations-->
+    <p>
+        According to the
+        <a href="/en-US/docs/Web/HTML/Element/blockquote">
+          <cite>MDN blockquote page</cite></a>:
+      </p>
+      
+      <blockquote
+        cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+        <p>
+          The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+          <em>HTML Block Quotation Element</em>) indicates that the enclosed text is
+          an extended quotation.
+        </p>
+      </blockquote>
+      
+      <p>
+        The quote element — <code>&lt;q&gt;</code> — is
+        <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+          intended for short quotations that don't require paragraph breaks.
+        </q>
+        — <a href="/en-US/docs/Web/HTML/Element/q"><cite>MDN q page</cite></a>.
+      </p>
+
+    <!--Inline Quotes-->
+    <p>
+        The quote element — <code>&lt;q&gt;</code> — is
+        <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+          intended for short quotations that don't require paragraph breaks.
+        </q>
+    </p>
+    <!--Active Learning-->
+    <p>Hello and welcome to my motivation page. As <a href="http://www.brainyquote.com/quotes/authors/c/confucius.html"><cite>Confucius' quotes site</cite></a> says:</p>
+    <blockquote cite="http://www.brainyquote.com/quotes/authors/c/confucius.html">
+    <p>It does not matter how slowly you go as long as you do not stop.</p>
+    </blockquote>
+
+    <p>I also love the concept of positive thinking, and 
+        <q cite="http://example.com/affirmationsforpositivethinking">
+            The Need To Eliminate Negative Self Talk
+        </q>(as mentioned in 
+        <a href="http://example.com/affirmationsforpositivethinking">
+            <cite>Affirmations for Positive Thinking</cite>
+        </a>.)
+    </p>
+    <!--Abbreviations-->
+    <p>
+        We use <abbr>HTML</abbr>, Hypertext Markup Language, to structure our web
+        documents.
+      </p>
+      
+      <p>
+        I think <abbr title="Reverend">Rev.</abbr> Green did it in the kitchen with
+        the chainsaw.
+      </p>
+    <!--Marking up contact details-->
+    <address>
+        <p>
+          Chris Mills<br />
+          Manchester<br />
+          The Grim North<br />
+          UK
+        </p>
+      
+        <ul>
+          <li>Tel: 01234 567 890</li>
+          <li>Email: me@grim-north.co.uk</li>
+        </ul>
+
+        Page written by <a href="../authors/chris-mills/">Chris Mills</a>.
+    </address>
+    <!--Superscript and subscript-->
+    <p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+    <p>
+    Caffeine's chemical formula is
+    C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.
+    </p>
+    <p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+    <!--Representing computer code-->
+    <p>
+        &lt;code>: For marking up generic pieces of computer code.<br/>
+        &lt;pre>: For retaining whitespace (generally code blocks) — if you use indentation or excess whitespace inside your text, browsers will ignore it and you will not see it on your rendered page. If you wrap the text in &lt;pre>&lt;/pre> tags however, your whitespace will be rendered identically to how you see it in your text editor.<br/>
+        &lt;var>: For specifically marking up variable names.<br/>
+        &lt;kbd>: For marking up keyboard (and other types of) input entered into the computer.<br/>
+        &lt;samp>: For marking up the output of a computer program.<br/>
+    </p>
+    <!--marking up times and dates-->
+    <!-- Standard simple date -->
+    <time datetime="2016-01-20">20 January 2016</time><br/>
+    <!-- Just year and month -->
+    <time datetime="2016-01">January 2016</time><br/>
+    <!-- Just month and day -->
+    <time datetime="01-20">20 January</time><br/>
+    <!-- Just time, hours and minutes -->
+    <time datetime="19:30">19:30</time><br/>
+    <!-- You can do seconds and milliseconds too! -->
+    <time datetime="19:30:01.856">19:30:01.856</time><br/>
+    <!-- Date and time -->
+    <time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time><br/>
+    <!-- Date and time with timezone offset -->
+    <time datetime="2016-01-20T19:30+01:00">
+    7.30pm, 20 January 2016 is 8.30pm in France
+    </time><br/>
+    <!-- Calling out a specific week number -->
+    <time datetime="2016-W04">The fourth week of 2016</time><br/>
+</body>
+</html>

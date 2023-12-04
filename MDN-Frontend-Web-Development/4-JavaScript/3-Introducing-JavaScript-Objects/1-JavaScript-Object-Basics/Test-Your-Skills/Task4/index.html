@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+
+    function Cat(name,breed,color) {
+        this.name = name;
+        this.breed = breed;
+        this.color = color;
+        this.greeting = function () {
+            const section = document.querySelector('section');
+            const para1 = document.createElement('p');
+            para1.textContent = `Hello, said ${ this.name } the ${ this.breed }.`;
+            section.appendChild(para1);
+        }
+    }
+
+
+const cat = new Cat('Bertie','Cymric','white');
+const cat2 = new Cat('Elfie', 'Aphrodite Giant', 'ginger');
+cat.greeting();
+cat2.greeting();
+  </script>
+
+</html>

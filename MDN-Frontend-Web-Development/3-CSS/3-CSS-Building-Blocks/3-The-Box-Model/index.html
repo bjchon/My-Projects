@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Box Model</title>
+</head>
+<body>
+    <!--CSS Frequently Used By Developers
+        html {
+                box-sizing: border-box;
+        }
+        *,
+        *::before,
+        *::after {
+        box-sizing: inherit;
+        }
+    -->
+    <!--Task 1
+        In this task, there are two boxes below, one is using the standard 
+        box model, the other the alternate box model. Change the width of 
+        the second box by adding declarations to the .alternate class, so 
+        that it matches the visual width of the first box.
+    -->
+
+    <div class="boxTask1">I use the standard box model.</div>
+    <div class="boxTask1 alternateTask1">I use the alternate box model.</div>
+
+    <!--Task 2
+        In this task, add to the box:
+
+            A 5px, black, dotted border.
+            A top margin of 20px.
+            A right margin of 1em.
+            A bottom margin of 40px.
+            A left margin of 2em.
+            Padding on all sides of 1em.
+    -->
+    <div class="boxTask2">I use the standard box model.</div>
+
+    <!--Task 3 
+        In this task, the inline element has a margin, padding and border.
+        However, the lines above and below are overlapping it. What can you 
+        add to your CSS to cause the size of the margin, padding, and 
+        border to be respected by the other lines, while still keeping the 
+        element inline?
+    -->
+
+    <div class="boxTask3">  
+        <p>Veggies es bonus vobis, <span>proinde vos postulo</span> essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+      
+        <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+    </div>
+
+    
+</body>
+</html>

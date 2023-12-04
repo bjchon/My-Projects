@@ -1,0 +1,48 @@
+.hex {
+    background-color: #86DEFA;
+  }
+  
+  .rgb {
+    background-color:  rgb(134, 222, 250);
+    margin-top: 5px;
+  }
+  
+  .hsl {
+    background-color: hsl(194, 92%, 75%);
+    margin-top: 5px;
+  }
+  
+  .transparency {
+    background-color: rgba(134, 222, 250, .6);
+    margin-top: 5px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+  
+  h2 {
+    font-size: 2em;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  h1+p {
+    font-size: 1.2em;
+  }
+
+.box {
+    border: 5px solid black;
+    width: 90vw;
+    height: 50vh;
+  }
+
+.Task3 {
+    background-image: url(emoji.png);
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    background-position: center top 20px;
+  }
+

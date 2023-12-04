@@ -1,0 +1,84 @@
+.task1 h1 {
+    color: blue;
+}
+
+.task1 h2 {
+    color: white;
+    background-color: blue;
+}
+
+span {
+    font-size: 200%;
+}
+
+.task2 #special {
+    background-color: yellow;
+}
+
+.task2 .alert[class="alert"] {
+    border: 1px solid grey;
+}
+
+.task2 .alert[class*=stop] {
+    background-color: red;
+}
+
+.task2 .alert[class*="go"] {
+    background-color: green;
+}
+
+.task3 a:link {
+    color: orange;
+}
+
+.task3 a:visited {
+    color: green;
+}
+
+.task3 a:hover {
+    text-decoration: none;
+}
+
+.task3 > :nth-child(2) {
+    font-size: 150%;
+}
+
+.task3 > :nth-child(2):first-line {
+    color:red;
+}
+
+.task3 tbody > :nth-child(even) {
+    color: white;
+    background-color: #333;
+}
+
+.task4 h2 + p {
+    color:red;
+}
+
+.task4 .list > li {
+    list-style-type: none;
+    border-bottom: 1px solid grey;
+}
+
+.task5 li {
+    margin: 15px;
+}
+
+.task5 a {
+    border: 5px solid grey;
+}
+
+.task5 a[title] {
+    border-color: pink;
+}
+
+.task5 a[href*="contact"] {
+    border-color: orange;
+}
+
+.task5 a[href^="https"] {
+    border-color: green;
+}
+
+

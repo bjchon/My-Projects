@@ -1,0 +1,30 @@
+.box {
+    border: 5px solid black;
+    margin-bottom: 5px;
+}
+
+.box1 {
+    min-height:100px;
+    margin-bottom: 5px;
+   }
+   
+.box2 {
+    height: 100px;
+    margin-bottom: 50px;
+   }
+
+   * {
+    box-sizing: border-box;
+  }
+
+  .inner {
+   width: 60%;
+  padding: 10%;
+  background-color: rebeccapurple;
+  color: white;
+  border-radius: 10px;
+  }
+
+  img {
+max-width:100%;
+}

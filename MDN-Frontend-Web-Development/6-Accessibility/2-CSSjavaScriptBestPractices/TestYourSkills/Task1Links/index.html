@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>CSS accessibility: Task 1</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      a {
+        text-decoration: none;
+        color: #666;
+        outline: none;
+      }
+
+      a:hover,
+      a:focus {
+        color: blue;
+        background-color: lightgrey;
+        text-decoration: underline;
+      }
+
+      :visited::after {
+        color: red;
+      }
+
+      a:active {
+        color: #000000;
+        background-color: #a60000;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <ul>
+      <li><a href="https://google.com" target="_blank">Animals</a></li>
+      <li><a href="">Computers</a></li>
+      <li><a href="">Diversity and inclusion</a></li>
+      <li><a href="">Food</a></li>
+      <li><a href="">Medicine</a></li>
+      <li><a href="">Music</a></li>
+    </ul>
+
+  </body>
+
+</html>

@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #fff;
+    color: #333;
+    font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding: 1em;
+    margin: 0;
+    width: 500px;
+  }
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: 100%;
+  width: 150px;
+  padding: .2em;
+  margin: .2em;
+  display: grid;
+  border: 2px black solid;
+}
+
+button {
+    margin-top: 1em;
+}

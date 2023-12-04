@@ -1,0 +1,41 @@
+#outerTask1 div ul .nav a {
+    background-color: powderblue;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+div div li a {
+    color: rebeccapurple;
+}
+
+#outerTask1 div ul .nav a {
+    background-color: unset;
+}
+
+@layer yellow, green, purple;
+
+@layer yellow {
+  div ul .nav a {
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
+
+@layer green {
+    #outerTask2 a {
+    color: lightgreen !important;
+  }
+} 
+
+@layer purple {
+    #outerTask2 a {
+      color: rebeccapurple;
+    }
+  }
+
+              
+
+
+

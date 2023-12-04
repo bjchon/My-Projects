@@ -1,0 +1,39 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+    *::before,
+    *::after {
+    box-sizing: inherit;
+    }
+
+.boxTask1 {
+  border: 5px black solid;
+  background-image: url(emoji.png);
+  background-size: 75px 75px;
+  border-radius: 10px;
+}
+
+.boxTask1 h2 {
+    background-color: rgba(0,0,0,.5);
+    color: white;
+}
+
+.boxTask2 {
+    border: 5px solid lightblue;
+    border-radius: 20px 0 40px 0;
+}
+
+.boxTask2 h2 {
+    padding: 16px;
+    margin: 20px;
+    text-align: center;
+    background-image: url(emoji.png), url(emoji1.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat, repeat-y;
+    background-position: 50px 20px, top right;
+}
+
+
+

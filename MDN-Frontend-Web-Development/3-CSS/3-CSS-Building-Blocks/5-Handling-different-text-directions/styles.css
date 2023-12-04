@@ -1,0 +1,31 @@
+.boxTask1 {
+    writing-mode: vertical-rl;
+    border: 5px solid rebeccapurple;
+    background-color: lightgray;
+    padding: 40px;
+    margin: 40px;
+  }
+
+  .boxTask2 {
+    border: 5px solid rebeccapurple;
+    background-color: lightgray;
+    padding: 40px;
+    margin: 40px;
+    inline-size: 200px;/*width*/
+    block-size: 100px;/*height*/
+  }
+
+  .vertical {
+    writing-mode: vertical-rl;
+  }
+
+  .boxTask3 {
+    width: 150px;
+    height: 150px;
+    border-block-start: 5px solid rebeccapurple;/*border-top*/
+    border-inline-end: 5px solid grey;/*border-right*/
+    border-block-end: 5px dotted red;/*border-bottom*/
+    border-inline-start: 5px dotted blue;/*border-left*/
+    padding-block-start: 40px;/*padding-top*/
+    margin-block-end: 30px;/*margin-bottom*/
+  }

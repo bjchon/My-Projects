@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>OOJS: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+class Shape {
+
+    name;
+    sides;
+    sideLength;
+
+    constructor(name, sides, sideLength) {
+    this.name = name;
+    this.sides = sides;
+    this.sideLength = sideLength;
+    }
+
+    calcPerimeter() {
+        const section = document.querySelector('section');
+        const para = document.createElement('p');
+        para.textContent = this.sides*this.sideLength;
+        section.appendChild(para);
+    }
+
+}
+
+
+
+const square = new Shape('square', 4, 5);
+square.calcPerimeter();
+const triangle = new Shape('triangle', 3, 3); 
+triangle.calcPerimeter();
+
+//inheritance
+class Square extends Shape{
+ constructor(sideLength) {
+        super('squre', 4, sideLength);
+    }
+
+ calcArea() {
+    const section = document.querySelector('section');
+        const para = document.createElement('p');
+        para.textContent = this.sideLength*this.sideLength;
+        section.appendChild(para);
+ }
+}
+
+const square2 = new Square(10);
+square2.calcPerimeter();
+square2.calcArea();
+  </script>
+
+</html>

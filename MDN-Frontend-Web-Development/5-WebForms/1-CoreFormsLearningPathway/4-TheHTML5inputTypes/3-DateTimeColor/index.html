@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- creates a widget to display and pick a date with time with no specific time zone information. -->
+    <input type="datetime-local" name="datetime" id="datetime" /><br>
+    <!-- creates a widget to display and pick a month with a year. -->
+    <input type="month" name="month" id="month" /><br>
+    <!-- creates a widget to display and pick a time value. While time may display in 12-hour format, the value returned is in 24-hour format. -->
+    <input type="time" name="time" id="time" /><br>
+    <!-- creates a widget to display and pick a week number and its year. -->
+    <input type="week" name="week" id="week" /><br>
+    <!-- Constraining date/time values
+    All date and time controls can be constrained using the min and max attributes, with further constraining possible via the step attribute (whose value varies according to input type). -->
+    <label for="myDate">When are you available this summer?</label><br>
+    <input
+    type="date"
+    name="myDate"
+    min="2013-06-01"
+    max="2013-08-31"
+    step="7"
+    id="myDate" />
+    <!--     Color picker control
+    A color control can be created using the <input> element with its type attribute set to the value color: -->
+    <input type="color" name="color" id="color" />
+</body>
+</html>

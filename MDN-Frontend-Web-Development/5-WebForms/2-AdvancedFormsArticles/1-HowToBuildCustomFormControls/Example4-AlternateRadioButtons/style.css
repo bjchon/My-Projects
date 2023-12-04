@@ -1,0 +1,47 @@
+.styledSelect {
+    display: inline-block;
+    padding: 0;
+  }
+  .styledSelect li {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+  }
+  .styledSelect [type="radio"] {
+    position: absolute;
+    left: -100vw;
+    top: -100vh;
+  }
+  .styledSelect label {
+    margin: 0;
+    line-height: 2;
+    padding: 0 0 0 4px;
+  }
+  .styledSelect:not(:focus-within) input:not(:checked) + label {
+    height: 0;
+    outline: none;
+    overflow: hidden;
+  }
+  .styledSelect:not(:focus-within) input:checked + label {
+    border: 0.2em solid #000;
+    border-radius: 0.4em;
+    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.45);
+  }
+  .styledSelect:not(:focus-within) input:checked + label::after {
+    content: "▼";
+    background: black;
+    float: right;
+    color: white;
+    padding: 0 4px;
+    margin: 0 -4px 0 4px;
+  }
+  .styledSelect:focus-within {
+    border: 0.2em solid #000;
+    border-radius: 0.4em;
+    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.45);
+  }
+  .styledSelect:focus-within input:checked + label {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+  }
